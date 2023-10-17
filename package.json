@@ -7,7 +7,9 @@
     "build": "refine build",
     "start": "refine start",
     "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
-    "refine": "refine"
+    "refine": "refine",
+    "migrate":"npx prisma migrate dev --name init2",
+    "s":"npx ts-node script.ts"
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
