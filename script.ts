@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient ,Post} from '@prisma/client'
 
 const prisma = new PrismaClient()
 
@@ -8,6 +8,7 @@ async function main() {
       posts: true,
     },
   })
+  
   console.dir(usersWithPosts, { depth: null })
 }
 

@@ -1,6 +1,7 @@
 import { DownOutlined } from "@ant-design/icons";
 import type { RefineThemedLayoutV2HeaderProps } from "@refinedev/antd";
 import { useGetIdentity, useGetLocale } from "@refinedev/core";
+import type {Post} from 'prisma/prisma-client';
 import {
   Layout as AntdLayout,
   Avatar,

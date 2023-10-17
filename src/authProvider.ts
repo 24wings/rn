@@ -1,6 +1,6 @@
 import { AuthBindings } from "@refinedev/core";
 import nookies from "nookies";
-postgres
+
 const mockUsers = [
   {
     name: "John Doe",
