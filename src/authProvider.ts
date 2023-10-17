@@ -1,6 +1,6 @@
 import { AuthBindings } from "@refinedev/core";
 import nookies from "nookies";
-
+postgres
 const mockUsers = [
   {
     name: "John Doe",
@@ -12,8 +12,8 @@ const mockUsers = [
     name: "Jane Doe",
     email: "janedoe@mail.com",
     roles: ["editor"],
-    avatar: "https://i.pravatar.cc/150?img=1",
-  },
+    avatar: "https://i.pravatar.cc/150?img=1"
+  }
 ];
 
 export const authProvider: AuthBindings = {

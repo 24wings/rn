@@ -8,6 +8,9 @@ dependencies:
   '@ant-design/icons':
     specifier: ^5.0.1
     version: 5.2.6(react-dom@18.2.0)(react@18.2.0)
+  '@prisma/client':
+    specifier: ^5.4.2
+    version: 5.4.2(prisma@5.4.2)
   '@refinedev/antd':
     specifier: ^5.7.0
     version: 5.36.10(@refinedev/core@4.44.5)(@types/react-dom@18.2.13)(@types/react@18.2.28)(antd@5.10.1)(dayjs@1.11.10)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
@@ -67,6 +70,9 @@ devDependencies:
   cross-env:
     specifier: ^7.0.3
     version: 7.0.3
+  prisma:
+    specifier: ^5.4.2
+    version: 5.4.2
   typescript:
     specifier: ^4.7.4
     version: 4.9.5
@@ -1794,6 +1800,28 @@ packages:
     transitivePeerDependencies:
       - debug
     dev: false
+
+  /@prisma/client@5.4.2(prisma@5.4.2):
+    resolution: {integrity: sha512-2xsPaz4EaMKj1WS9iW6MlPhmbqtBsXAOeVttSePp8vTFTtvzh2hZbDgswwBdSCgPzmmwF+tLB259QzggvCmJqA==}
+    engines: {node: '>=16.13'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 5.4.1-2.ac9d7041ed77bcc8a8dbd2ab6616b39013829574
+      prisma: 5.4.2
+    dev: false
+
+  /@prisma/engines-version@5.4.1-2.ac9d7041ed77bcc8a8dbd2ab6616b39013829574:
+    resolution: {integrity: sha512-wvupDL4AA1vf4TQNANg7kR7y98ITqPsk6aacfBxZKtrJKRIsWjURHkZCGcQliHdqCiW/hGreO6d6ZuSv9MhdAA==}
+    dev: false
+
+  /@prisma/engines@5.4.2:
+    resolution: {integrity: sha512-fqeucJ3LH0e1eyFdT0zRx+oETLancu5+n4lhiYECyEz6H2RDskPJHJYHkVc0LhkU4Uv7fuEnppKU3nVKNzMh8g==}
+    requiresBuild: true
 
   /@radix-ui/react-compose-refs@1.0.1(@types/react@18.2.28)(react@18.2.0):
     resolution: {integrity: sha512-fDSBgd44FKHa1FRMU59qBMPFcl2PZE+2nmqunj+BWFyYYjnhIDWL2ItDs3rrbJDQOtzt5nIebLCQc4QRfz6LJw==}
@@ -5555,6 +5583,14 @@ packages:
     dependencies:
       react: 18.2.0
     dev: false
+
+  /prisma@5.4.2:
+    resolution: {integrity: sha512-GDMZwZy7mysB2oXU+angQqJ90iaPFdD0rHaZNkn+dio5NRkGLmMqmXs31//tg/qXT3iB0cTQwnGGQNuirhSTZg==}
+    engines: {node: '>=16.13'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 5.4.2
 
   /promise@7.3.1:
     resolution: {integrity: sha512-nolQXZ/4L+bP/UGlkfaIujX9BKxGwmQ9OT4mOt5yvy8iK1h3wqTEJCijzGANTCCl9nWjY41juyAn2K3Q1hLLTg==}
