@@ -21,7 +21,7 @@ import { App as AntdApp } from "antd";
 import { appWithTranslation, useTranslation } from "next-i18next";
 import { authProvider } from "src/authProvider";
 
-const API_URL = "https://api.fake-rest.refine.dev";
+const API_URL = "/api";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   noLayout?: boolean;
@@ -79,6 +79,17 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
                       canDelete: true,
                     },
                   },
+                  {
+                    name: "/rbac/users",
+                    list: "/rbac/users",
+                    create: "/rbac/users/create",
+                    edit: "/rbac/users/edit/:id",
+                    show: "/rbac/users/show/:id",
+                    meta: {
+                      canDelete: true,
+                    },
+                  },
+                  
                   {
                     name: "categories",
                     list: "/categories",
