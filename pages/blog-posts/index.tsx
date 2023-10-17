@@ -4,7 +4,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { authProvider } from "src/authProvider";
 
 export default function BlogPostList() {
-  return <AntdListInferencer />;
+  return <> <div>test</div> <AntdListInferencer /></>;
 }
 
 export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
