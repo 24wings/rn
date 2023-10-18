@@ -20,6 +20,9 @@ import dataProvider from "@refinedev/simple-rest";
 import { App as AntdApp } from "antd";
 import { appWithTranslation, useTranslation } from "next-i18next";
 import { authProvider } from "src/authProvider";
+import {  RefineThemes } from "@refinedev/antd";
+
+import { ConfigProvider,theme } from "antd";
 
 const API_URL = "/api";
 
@@ -39,8 +42,9 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
 
     return (
       <ThemedLayoutV2
+
         Header={() => <Header sticky />}
-        Sider={(props) => <ThemedSiderV2 {...props} fixed />}
+        Sider={(props) => <ThemedSiderV2     {...props}  fixed />}
       >
         <Component {...pageProps} />
       </ThemedLayoutV2>
@@ -57,27 +61,37 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
 
   return (
     <>
-      <GitHubBanner />
+      {/* <GitHubBanner /> */}
       <RefineKbarProvider>
+        <ConfigProvider theme={{algorithm:theme.darkAlgorithm}}>
         <ColorModeContextProvider>
           <AntdApp>
             <DevtoolsProvider>
               <Refine
+              
                 routerProvider={routerProvider}
                 dataProvider={dataProvider(API_URL)}
                 notificationProvider={useNotificationProvider}
                 authProvider={authProvider}
                 i18nProvider={i18nProvider}
+                
                 resources={[
                   {
+                    
+                    identifier:"blog-posts",
                     name: "blog_posts",
                     list: "/blog-posts",
                     create: "/blog-posts/create",
                     edit: "/blog-posts/edit/:id",
                     show: "/blog-posts/show/:id",
                     meta: {
+                      label:"博客",
+                      name:"博客",
                       canDelete: true,
                     },
+                  },
+                  {
+                    name:"角色权限"
                   },
                   {
                     name: "/rbac/users",
@@ -85,8 +99,15 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
                     create: "/rbac/users/create",
                     edit: "/rbac/users/edit/:id",
                     show: "/rbac/users/show/:id",
+                    options:{
+                      
+                      name:"用户"
+                    },
                     meta: {
+                      label:'用户',
                       canDelete: true,
+                      parent:"角色权限",
+                      name:"用户"
                     },
                   },
                   
@@ -98,6 +119,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
                     show: "/categories/show/:id",
                     meta: {
                       canDelete: true,
+                      parent:"角色权限"
                     },
                   },
                 ]}
@@ -116,6 +138,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
             </DevtoolsProvider>
           </AntdApp>
         </ColorModeContextProvider>
+        </ConfigProvider>
       </RefineKbarProvider>
     </>
   );
